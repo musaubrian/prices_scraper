@@ -4,16 +4,17 @@ scrapes for fuel prices from
 www.globalpetrolprices.com/Kenya/
 """
 
+from regex import W
 import requests
 from bs4 import BeautifulSoup
-#import twitterscraper
 
 
 url = "https://www.globalpetrolprices.com/Kenya/"
 
-def scrape_for_prices():
-    req = requests.get(url=url)
-    
+
+def scrape_for_prices(mkt_url: str):
+    req = requests.get(url=mkt_url)
+
     soup = BeautifulSoup(req.content, "html.parser")
     fuel_price_section = soup.find("div", id="graphPageLeft")
 
@@ -25,4 +26,4 @@ def scrape_for_prices():
 
 
 if __name__ == "__main__":
-    scrape_for_prices()
+    scrape_for_prices(url)
