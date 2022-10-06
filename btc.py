@@ -47,20 +47,20 @@ def convert_to_kes(usd: int):
     Args::
         usd(str): btc price in USD
     """
-    convertion_rate = int(input("Enter current conversion rate: "))
+    convertion_rate = int(input("Enter current conversion rate(1~1000): "))
     curr_prefix = input("Currency prefix(USD/KES): ")
     usd_to_kes = usd * convertion_rate
 
     usd_shorthand = usd / 1000
     kes_shorthand = usd_to_kes / 1000000
 
-    print(f"{curr_prefix} {usd}\n {usd_shorthand:.2f}K")
-    print(f"{curr_prefix} {usd_to_kes}\n {kes_shorthand:.2f}M")
+    print(f"\nUSD {usd}\n 1 BTC = USD {usd_shorthand:.2f}K")
+    print(f"{curr_prefix} {usd_to_kes}\n 1 BTC = {curr_prefix} {kes_shorthand:.2f}M")
     print("*"*25)
     if usd < 19000:
-        print(f"BUY THE DIP!!!")
+        print(f"\nBUY THE DIP!!!")
     elif usd > 19000 and usd < 25000:
-        print(f"HODLE!!!")
+        print(f"\nHODLE!!!")
 
 
 
