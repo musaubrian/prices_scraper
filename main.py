@@ -4,7 +4,6 @@ scrapes for fuel prices from
 www.globalpetrolprices.com/Kenya/
 """
 
-from regex import W
 import requests
 from bs4 import BeautifulSoup
 
